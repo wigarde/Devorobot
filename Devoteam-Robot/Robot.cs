@@ -1,15 +1,16 @@
-﻿namespace Devoteam_Robot
+﻿using System.Data;
+
+namespace Devoteam_Robot
 {
     internal class Robot
     {
         private int roomWidth;
         private int roomHeight;
-        private char direction;
 
         public int x { get; private set; }
         public int y { get; private set; }
 
-        public Direction Direction { get; private set; }
+        public Direction direction { get; private set; }
 
 
         public Robot(int roomWidth, int roomHeight, int startX, int startY, char direction)
@@ -19,7 +20,7 @@
             x = startX; 
             y = startY;
 
-            this.direction = direction;
+            this.direction  = charToDirection(direction);
         }
 
         public void executeNavigation(char[] navigation)
@@ -38,6 +39,18 @@
                         throw new Exception("Wrong input, only LRF is allowed");
                 }
             }
+        }
+
+        private Direction charToDirection(char direction)
+        {
+            return direction switch
+            {
+                'N' => Direction.N,
+                'E' => Direction.E,
+                'S' => Direction.S,
+                'W' => Direction.W,
+                _ => throw new ArgumentException("Invalid direction")
+            };
         }
     }
 }
