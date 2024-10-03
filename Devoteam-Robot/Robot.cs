@@ -14,12 +14,16 @@ namespace Devoteam_Robot
         public int x { get; private set; }
         public int y { get; private set; }
 
+        public Direction Direction { get; private set; }
+
         public Robot(int roomWidth, int roomHeight, int startX, int startY, Direction direction)
         {
             this.roomWidth = roomWidth;
             this.roomHeight = roomHeight;
             x = startX; 
             y = startY;
+
+            Direction = direction;
         }
     }
 }

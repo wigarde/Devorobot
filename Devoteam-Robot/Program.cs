@@ -1,13 +1,15 @@
-﻿namespace Devoteam_Robot
+﻿using Devoteam_Robot;
+class Program
 {
-    internal class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
+        Console.WriteLine("Enter room size as 'width height'");
+        string roomSizeInput = Console.ReadLine();
 
-            Robot robot = new Robot(5, 5, 2, 3);
+        string[] roomSizes = roomSizeInput.Split();
+        int width = int.Parse(roomSizes[0]);
+        int height = int.Parse(roomSizes[1]);  
 
-            Console.WriteLine("Hello devoteam!");
-        }
+        Robot robot = new Robot(width, height, 2, 3, Direction.N);
     }
 }
