@@ -1,4 +1,5 @@
 ﻿Needed improvements if time is given:
 
 * Make sure that we handle empty and negative inputs correctly.
+* Better error handling if we input an incorrect amount of arguments to the robot, i.e only one 
 * Include tests with a framework like NUnit
