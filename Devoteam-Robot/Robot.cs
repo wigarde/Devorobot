@@ -52,5 +52,29 @@ namespace Devoteam_Robot
                 _ => throw new ArgumentException("Invalid direction")
             };
         }
+
+        private Dictionary<Direction, Direction> leftMap = new Dictionary<Direction, Direction>
+        {
+            { Direction.N, Direction.W},
+            { Direction.W, Direction.S},
+            { Direction.S, Direction.E},
+            { Direction.E, Direction.N}
+        };
+
+        private Dictionary<Direction, Direction> rightMap = new Dictionary<Direction, Direction>
+        {
+            { Direction.N, Direction.E},
+            { Direction.E, Direction.S},
+            { Direction.S, Direction.W},
+            { Direction.W, Direction.N}
+        };
+
+        private Dictionary<Direction, (int deltaX, int deltaY)> moveMap = new Dictionary<Direction, (int deltaX, int deltaY)>
+        {
+            { Direction.N, (0, 1) },
+            { Direction.E, (1, 0) },
+            { Direction.S, (0, -1) },
+            { Direction.W, (-1, 0) }
+        };
     }
 }
