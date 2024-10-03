@@ -30,15 +30,25 @@ namespace Devoteam_Robot
                 switch (c)
                 {
                     case 'L':
+                        direction = leftMap[direction];
                         break;
                     case 'R':
+                        direction = rightMap[direction];
                         break;
                     case 'F':
+                        move();
                         break;
                     default:
                         throw new Exception("Wrong input, only LRF is allowed");
                 }
             }
+        }
+
+        private void move()
+        {
+            (int deltaX, int deltaY) = moveMap[direction];
+            x += deltaX;
+            y += deltaY;
         }
 
         private Direction charToDirection(char direction)
