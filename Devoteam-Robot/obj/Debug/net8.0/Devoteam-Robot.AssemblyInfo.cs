@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Devoteam-Robot")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b283e25dd37b08e3195832d676da3b5325d80667")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4adf338fb2f02c5d5dba71886fd0caf057522e18")]
 [assembly: System.Reflection.AssemblyProductAttribute("Devoteam-Robot")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Devoteam-Robot")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
