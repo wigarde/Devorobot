@@ -1,6 +1,4 @@
-﻿using System.Data;
-
-namespace Devoteam_Robot
+﻿namespace Devoteam_Robot
 {
     internal class Robot
     {
@@ -23,6 +21,10 @@ namespace Devoteam_Robot
             this.direction  = charToDirection(direction);
         }
 
+        /// <summary>
+        /// Executes the movements of the robots
+        /// </summary>
+        /// <param name="navigation">char array of navigation prompts</param>
         public void executeNavigation(char[] navigation)
         {
             foreach (char c in navigation)
@@ -49,6 +51,10 @@ namespace Devoteam_Robot
             Console.WriteLine($"Current position (X, Y, Dir): {x} {y} {direction}");
         }
 
+        /// <summary>
+        /// Checks if the robot is out of bounds or not
+        /// </summary>
+        /// <returns>true if out of bounds, false otherwise</returns>
         private bool checkOutOfBounds()
         {
             if (x < 0 || x >= roomWidth)
@@ -58,6 +64,9 @@ namespace Devoteam_Robot
             return false;
         }
 
+        /// <summary>
+        /// Moves the robot if given the F command
+        /// </summary>
         private void move()
         {
             (int deltaX, int deltaY) = moveMap[direction];
@@ -65,6 +74,11 @@ namespace Devoteam_Robot
             y += deltaY;
         }
 
+        /// <summary>
+        /// Fetches the correct direction from the Direction-enum from the given char-direction
+        /// </summary>
+        /// <param name="direction">direction to fetch enum for</param>
+        /// <returns>The corresponding Direction for the given char-direction</returns>
         private Direction charToDirection(char direction)
         {
             return direction switch
