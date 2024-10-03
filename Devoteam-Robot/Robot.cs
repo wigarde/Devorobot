@@ -19,6 +19,10 @@
             y = startY;
 
             this.direction  = charToDirection(direction);
+
+            if (checkOutOfBounds())
+                throw new InvalidOperationException($"ERROR: Out of bounds at {x} {y}");
+
         }
 
         /// <summary>
