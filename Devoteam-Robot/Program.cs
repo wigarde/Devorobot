@@ -1,5 +1,4 @@
 ﻿using Devoteam_Robot;
-using System;
 internal class Program
 {
     private static void Main(string[] args)
