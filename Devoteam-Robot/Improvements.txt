@@ -1,0 +1,4 @@
+﻿Needed improvements if time is given:
+
+* Make sure that we handle empty and negative inputs correctly.
+* Include tests with a framework like NUnit
