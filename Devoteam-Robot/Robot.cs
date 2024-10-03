@@ -21,5 +21,23 @@
 
             this.direction = direction;
         }
+
+        public void executeNavigation(char[] navigation)
+        {
+            foreach (char c in navigation)
+            {
+                switch (c)
+                {
+                    case 'L':
+                        break;
+                    case 'R':
+                        break;
+                    case 'F':
+                        break;
+                    default:
+                        throw new Exception("Wrong input, only LRF is allowed");
+                }
+            }
+        }
     }
 }

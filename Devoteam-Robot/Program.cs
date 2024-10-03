@@ -20,6 +20,12 @@ internal class Program
 
 
             Robot robot = new Robot(width, height, x, y, direction);
+
+            Console.WriteLine("Enter navigation coommands as 'LRLRFFRLFRL'");
+            char[] navigationCommands = Console.ReadLine().ToCharArray();
+
+            robot.executeNavigation(navigationCommands);
+
         }
 
         catch (Exception ex) { 
