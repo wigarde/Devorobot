@@ -7,10 +7,10 @@ namespace Devoteam_Robot
         private int roomWidth;
         private int roomHeight;
 
-        public int x { get; private set; }
-        public int y { get; private set; }
+        private int x { get; set; }
+        private int y { get; set; }
 
-        public Direction direction { get; private set; }
+        private Direction direction { get; set; }
 
 
         public Robot(int roomWidth, int roomHeight, int startX, int startY, char direction)
@@ -39,9 +39,23 @@ namespace Devoteam_Robot
                         move();
                         break;
                     default:
-                        throw new Exception("Wrong input, only LRF is allowed");
+                        throw new Exception("Wrong input, only 'L','R' or 'F' is allowed");
                 }
+
+                if (checkOutOfBounds())
+                    throw new InvalidOperationException($"ERROR: Out of bounds at {x} {y}");
             }
+
+            Console.WriteLine($"Current position (X, Y, Dir): {x} {y} {direction}");
+        }
+
+        private bool checkOutOfBounds()
+        {
+            if (x < 0 || x >= roomWidth)
+                return true;
+            if (y < 0 || y >= roomHeight)
+                return true;
+            return false;
         }
 
         private void move()
